@@ -37,6 +37,16 @@ const conversiones = {
     }
   }
   
+  function guardarResultadoEnLocalStorage(fuerza) {
+    // Convierte el resultado a JSON y guárdalo en localStorage
+    localStorage.setItem('fuerzaCalculada', JSON.stringify(fuerza));
+  }
+  
+  function obtenerResultadoDesdeLocalStorage() {
+    // Obtiene el resultado desde localStorage y lo convierte de nuevo a objeto
+    const fuerzaGuardada = localStorage.getItem('fuerzaCalculada');
+    return fuerzaGuardada ? JSON.parse(fuerzaGuardada) : null;
+  }
   
   calcularFuerzaDeNewton();
   
